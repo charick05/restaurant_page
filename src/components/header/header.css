@@ -1,0 +1,33 @@
+header {
+   display: flex;
+   justify-content: space-between;
+   margin: 48px auto;
+}
+
+.headerTitle {
+   font-size: 31px;
+   font-weight: 700;
+}
+
+.headerRightBlock {
+   position: relative;
+   height: 50px;
+}
+
+.basketInfo {
+   position: absolute;
+   display: flex;
+   align-items: center;
+   left: -204px;
+   bottom: 4px;
+}
+
+.basketInfo img {
+   margin-left: 20px;
+}
+
+.countProduct {
+   text-align: end;
+   font-size: 17px;
+   font-weight: 500;
+}
