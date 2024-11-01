@@ -4,7 +4,7 @@ import './button.css'
 
 export const Button = ({product}) => {
    const dispatch = useDispatch();
-   const {products} = useSelector(state => state.basket)
+   const {products, login} = useSelector(state => state.basket)
    const productInBasket = products.find(e => product.id === e.id)
 
    let buttonColor = productInBasket
@@ -18,7 +18,7 @@ export const Button = ({product}) => {
    return (
       <button
          className="toggleBtn"
-         onClick={() => dispatch(productInBasket ? removeProduct(product) : addProduct(product))}
+         onClick={() => login === false ? alert('Сначала авторизуйтесь') : dispatch(productInBasket ? removeProduct(product) : addProduct(product))}
          style={buttonColor}>
          {
             productInBasket ? "✔" : "✚"

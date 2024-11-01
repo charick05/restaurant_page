@@ -4,7 +4,7 @@ import './productPage.css'
 
 export const ButtonInProduct = ({product}) => {
    const dispatch = useDispatch();
-   const {products} = useSelector(state => state.basket)
+   const {products, login} = useSelector(state => state.basket)
    const productInBasket = products.find(e => product.id === e.id)
 
    let buttonColor = productInBasket
@@ -20,7 +20,7 @@ export const ButtonInProduct = ({product}) => {
    return (
       <button
          className="btnInProduct"
-         onClick={() => dispatch(productInBasket ? removeProduct(product) : addProduct(product))}
+         onClick={() => login === false ? alert('Сначала авторизуйтесь') : dispatch(productInBasket ? removeProduct(product) : addProduct(product))}
          style={buttonColor}>
          {
             productInBasket ? "убрать" : "в корзину"
